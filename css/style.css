@@ -1,0 +1,667 @@
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        list-style-type: none;
+        line-height: 1.3;
+    }
+    
+     :root {
+        --primary-Soft-Blue: hsl(231, 69%, 60%);
+        --primary-Soft-Red: hsl(0, 94%, 66%);
+        --Neural-Grayish-Blue: hsl(229, 8%, 60%);
+        --Neural-Very-Dark-Blue: hsl(229, 31%, 21%);
+    }
+    
+    body {
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .wrapper {
+        margin: 20px auto;
+        width: 80%;
+    }
+    
+    img {
+        max-width: 100%;
+    }
+    
+    button {
+        cursor: pointer;
+    }
+    
+    .heading {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 6rem;
+    }
+    
+    .nav-element {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .nav-element li {
+        margin-left: 25px;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+    
+    .nav-element li:hover {
+        color: var(--primary-Soft-Red);
+        transition: all .5s;
+    }
+    
+    .nav-element li.active {
+        background-color: var(--primary-Soft-Red);
+        padding: 10px 17px;
+        color: #fff;
+        border-radius: 5px;
+    }
+    
+    .nav-element li.active:hover {
+        color: var(--primary-Soft-Red);
+        padding: 10px 17px;
+        background-color: #fff;
+        border-radius: 5px;
+        border: 1px solid var(--primary-Soft-Red);
+        transition: all .5s;
+    }
+    
+    .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, .9);
+        overflow: hidden;
+        transition: 0.4s;
+        padding-top: 60px;
+    }
+    
+    .sidebar .logo {
+        position: absolute;
+        top: 15px;
+        left: 25px;
+        margin-left: 50px;
+    }
+    
+    .sidebar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #fff;
+        display: block;
+        transition: 0.4s;
+        text-align: center;
+    }
+    
+    .siderbarNav {
+        margin-top: 50px;
+        text-transform: uppercase;
+        padding: 0px 30px;
+    }
+    
+    .siderbarNav a {
+        border-top: 1px solid rgba(253, 245, 245, 0.3);
+        padding: 20px;
+    }
+    
+    .siderbarNav a.activate {
+        border: 4px solid white;
+        border-radius: 5px;
+    }
+    
+    .sidebar .icons {
+        position: absolute;
+        bottom: 20px;
+        display: flex;
+        left: 40%;
+    }
+    
+    .sidebar a:hover {
+        color: #1ff1f1;
+    }
+    
+    .sidebar .closebtn {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        font-size: 36px;
+        margin-right: 50px;
+    }
+    
+    .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        color: black;
+        padding: 10px 15px;
+        border: none;
+        display: none;
+    }
+    
+    .section-1 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 30px;
+    }
+    
+    .section-1 h1 {
+        font-size: 35px;
+        color: var(--Neural-Very-Dark-Blue);
+        margin-bottom: 20px;
+    }
+    
+    .lead {
+        color: var(--Neural-Grayish-Blue);
+        margin-bottom: 3rem;
+    }
+    
+    .section-1 button {
+        padding: 20px 35px;
+        box-shadow: 10px 7px 8px rgba(0, 0, 0, 0.2);
+        border: none;
+        border-radius: 5px;
+    }
+    
+    .section-1 button:nth-of-type(2) {
+        margin-left: 7px;
+    }
+    
+    .section-1 button.active {
+        background-color: var(--primary-Soft-Blue);
+        color: #fff;
+    }
+    
+    .section-1 button:hover {
+        color: var(--Neural-Very-Dark-Blue);
+        transition: all .5s;
+        border: 1.5px solid var(--Neural-Very-Dark-Blue);
+    }
+    
+    .section-1 button.active:hover {
+        background-color: #fff;
+        color: var(--primary-Soft-Blue);
+        border: 1.5px solid var(--primary-Soft-Blue);
+        transition: all .5s;
+    }
+    
+    .section-2 {
+        margin: 0 6rem;
+        margin-bottom: 10em;
+    }
+    
+    .section-2 .feature {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .section-2 .feature h2 {
+        margin-bottom: 10px;
+        color: var(--Neural-Very-Dark-Blue)
+    }
+    /* Style the tab */
+    
+    .tab {
+        overflow: hidden;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2.5em;
+        gap: 2rem;
+    }
+    /* Style the buttons inside the tab */
+    
+    .tab button {
+        float: left;
+        background-color: #fff;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+    }
+    /* Change background color of buttons on hover */
+    
+    .tab button:hover {
+        color: var(--primary-Soft-Red);
+    }
+    /* Create an active/current tablink class */
+    
+    .tab button.active {
+        border-bottom: 5px solid red;
+    }
+    /* Style the tab content */
+    
+    #tab-2,
+    #tab-3 {
+        display: none;
+        padding: 6px 12px;
+        transition: all .7s;
+    }
+    
+    .tab-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .tab-container button {
+        padding: 10px;
+        color: #fff;
+        background-color: var(--primary-Soft-Blue);
+        border: none;
+        border-radius: 5px;
+    }
+    
+    .tab-container button:hover {
+        background-color: #fff;
+        color: var(--primary-Soft-Blue);
+        transition: all .6s;
+        border: 1px solid var(--primary-Soft-Blue);
+    }
+    
+    .tab-container h3,
+    p {
+        margin-bottom: 2rem;
+    }
+    
+    .section-3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 5em;
+    }
+    
+    .section-3 h3 {
+        margin-bottom: 2rem;
+    }
+    
+    .section-3 .boxes {
+        display: flex;
+        gap: 30px;
+        height: 380px;
+        margin-top: 2rem;
+    }
+    
+    .section-3 .boxes .box {
+        background-color: #fff;
+        box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        padding: 20px 30px;
+        line-height: 1.5;
+    }
+    
+    .box img,
+    h4 {
+        margin-bottom: 1rem;
+    }
+    
+    .box p {
+        opacity: .6;
+    }
+    
+    #box-1 {
+        align-self: flex-start;
+    }
+    
+    #box-2 {
+        align-self: center;
+    }
+    
+    #box-3 {
+        align-self: flex-end;
+    }
+    
+    .box button {
+        padding: 10px 15px;
+        background-color: var(--primary-Soft-Blue);
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+        transition: all .5s;
+    }
+    
+    .box button:hover {
+        background-color: #fff;
+        border: 1px solid var(--primary-Soft-Blue);
+        color: var(--primary-Soft-Blue);
+    }
+    /* * Style the buttons that are used to open and close the accordion panel */
+    
+    .section-4 {
+        text-align: center;
+        margin: 0 auto;
+        width: 50%;
+        margin-bottom: 7rem;
+    }
+    
+    .accordion-top {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .accordion {
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        outline: none;
+        transition: all 0.8s;
+        font-size: 17px;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        background-color: #fff;
+        text-align: left;
+    }
+    
+    .icons-arrow {
+        float: right;
+    }
+    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    
+    .active,
+    .accordion:hover {
+        background-color: #fff;
+        color: var(--primary-Soft-Red);
+    }
+    /* Style the accordion panel. Note: hidden by default */
+    
+    .panel {
+        padding: 0 18px;
+        background-color: white;
+        display: none;
+        overflow: hidden;
+        margin-top: 20px;
+        color: var(--Neural-Very-Dark-Blue);
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .section-4 .btn {
+        padding: 10px;
+        margin-top: 20px;
+        background-color: var(--primary-Soft-Blue);
+        border-radius: 7px;
+        border: none;
+        color: #fff;
+        transition: all .5s;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+    }
+    
+    .section-4 .btn:hover {
+        background-color: #fff;
+        border: 1px solid var(--primary-Soft-Blue);
+        color: var(--primary-Soft-Blue);
+    }
+    
+    .section-5 {
+        background-color: var(--primary-Soft-Blue);
+        color: #fff;
+        padding: 3rem;
+        text-align: center;
+    }
+    
+    .section-5 h5 {
+        text-transform: uppercase;
+        font-family: 'Courier New', Courier, monospace;
+        margin-bottom: 1rem;
+        letter-spacing: 7px;
+    }
+    
+    .section-5 h2 {
+        margin-bottom: 1.5rem;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    /* Imput email styling */
+    
+    #form {
+        width: 50%;
+        margin: 0 auto;
+    }
+    
+    .input-control {
+        width: 100%;
+        position: relative;
+        display: flex;
+    }
+    
+    .section-5 input {
+        padding: 15px 20px;
+        width: 80%;
+        outline: none;
+        border-radius: 5px;
+        border: none;
+    }
+    /* Email Validation Style */
+    
+    .error-massage {
+        display: inline-block;
+        background-color: var(--primary-Soft-Red);
+        width: 50%;
+        font-size: 14px;
+        margin-right: 112px;
+        text-align: left;
+        padding-left: 10px;
+        padding: 2px 10px 2px 10px;
+        visibility: hidden;
+    }
+    
+    .icon-error {
+        position: absolute;
+        top: 15px;
+        right: 200px;
+        visibility: hidden;
+    }
+    
+    .input-control.error input {
+        border: 2px solid var(--primary-Soft-Red);
+    }
+    
+    .input-control.success input {
+        border: 2px solid #2ecc71;
+    }
+    
+    .input-control.error .icon-error {
+        visibility: visible;
+    }
+    
+    .input-control.error .error-massage {
+        visibility: visible;
+    }
+    
+    .section-5 button {
+        color: #fff;
+        background-color: var(--primary-Soft-Red);
+        border-radius: 5px;
+        border: none;
+        transition: all .6s;
+        margin-left: 10px;
+        padding: 15px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    
+    .section-5 button:hover {
+        background-color: #fff;
+        color: var(--primary-Soft-Red);
+        border: 1px solid var(--primary-Soft-Red);
+    }
+    
+    footer {
+        background-color: var(--Neural-Very-Dark-Blue);
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3.3rem 6rem;
+    }
+    
+    footer .logo {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    footer a {
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    
+    footer .bookmark {
+        color: white;
+    }
+    
+    footer .icons img {
+        margin-right: 3rem;
+        padding: 7px;
+    }
+    
+    footer a:hover {
+        color: var(--primary-Soft-Red);
+        transition: all .6s;
+    }
+    
+    footer a img:hover {
+        color: var(--primary-Soft-Red);
+    }
+    /* Media Query Style For Responsiveness */
+    
+    @media(max-width: 780px) {
+        .openbtn {
+            display: block;
+        }
+        .nav-element {
+            display: none;
+        }
+        .section-1 {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        .section-1 button {
+            padding: 15px 20px;
+        }
+        .section-1 h1 {
+            font-size: 50px;
+        }
+        .lead {
+            font-size: 20px;
+        }
+        .tab {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            font-size: 30px;
+        }
+        .section-2 {
+            margin: 0 1rem;
+            margin-bottom: 10em;
+            text-align: center;
+        }
+        .section-2 .feature {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .tab button {
+            font-size: 20px;
+        }
+        .tab-container {
+            display: block;
+        }
+        .tab-container .showcas-left {
+            margin-bottom: 3rem;
+        }
+        .section-2 h2 {
+            margin-bottom: 1.5rem;
+        }
+        .section-3 {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 7em;
+        }
+        .section-3 h2 {
+            margin-bottom: 2rem;
+        }
+        .section-3 .boxes {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            height: 100%;
+        }
+        .section-3 .boxes .box {
+            padding: 30px 50px;
+            line-height: 1.5;
+            text-align: center;
+        }
+        .box button {
+            width: 100%;
+            padding: 20px 25px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .section-4 {
+            margin: 0 auto;
+            width: 90%;
+            margin-bottom: 7rem;
+        }
+        .section-4 h2 {
+            margin-bottom: 1.5rem;
+        }
+        #form {
+            width: 100%;
+            margin: 0 auto;
+        }
+        .input-control {
+            display: block;
+        }
+        .section-5 button {
+            width: 90%;
+            margin-top: 1rem;
+            font-size: 18px;
+        }
+        .section-5 input {
+            width: 90%;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .error-massage {
+            width: 90%;
+            margin-right: 0px;
+        }
+        .icon-error {
+            position: absolute;
+            right: 80px;
+        }
+        footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        footer .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        footer .icons img {
+            margin-right: 0;
+            padding: 20px;
+        }
+    }
